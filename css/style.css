@@ -186,7 +186,7 @@ span{
     }
 
     .clip-path {
-        clip-path: polygon(0% 100%, 100% 100%, 100% 55%, 50% 65%, 0% 55%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 50% 55%, 0% 50%);
     }
 
     a{
@@ -198,6 +198,8 @@ span{
     .text{
         color: #fff;
         padding: auto;
+        margin-left: 150px;
+        margin-top: 30px;
     }
     
     .text h1{
@@ -213,7 +215,7 @@ span{
         padding: 10px 30px;
         display: inline-block;
         margin-top: 20px;
-        margin-left: 25px;
+        margin-left: 45px;
         border: 2px solid #e7e00d;
         transition: 05s;
     }
@@ -222,10 +224,19 @@ span{
         transform: translateY(-5px);
     }
 
-    
-}
+    .img{
+        position: absolute;
+        right: auto;
+        top: 425px;
+    }
 
-/* Estilo para pantallas grandes */
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-   
+    .img img{
+        width: 250px;
+        margin-left: 260px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    
 }
