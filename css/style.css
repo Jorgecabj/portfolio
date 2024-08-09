@@ -24,6 +24,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 2% 6%;
+    flex-wrap: wrap;
 }
 
 .navbar ul{
@@ -59,10 +60,10 @@ a{
 
 .text h1{
     font-size: 60px;
+    text-align: left;
 }
 
 span{
-    color: #02d3fc;
     color: #e7e00d;
 }
 
@@ -71,7 +72,7 @@ span{
     display: inline-block;
     margin-top: 20px;
     border: 2px solid #e7e00d;
-    transition: 05s;
+    transition: 0.5s;
 }
 
 .btn:hover{
@@ -94,7 +95,7 @@ span{
 }
 
 /* Estilo para móviles */
-@media only screen and (min-width: 355px) and (max-width: 768px) {
+@media screen and (min-width: 355px) and (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: center;
@@ -102,7 +103,8 @@ span{
     }
 
     .clip-path {
-        clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 50% 60%, 0% 50%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 50% 52%, 0% 50%);
+        background: linear-gradient(to bottom, rgba(231, 224, 13, 0.2), #e7e00d); /* Degradado */
     }
 
     .navbar ul {
@@ -167,7 +169,7 @@ span{
 }
 
 /* Estilo para tablets */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     header {
         flex-direction: row;
         align-items: center;
@@ -187,6 +189,8 @@ span{
 
     .clip-path {
         clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 50% 55%, 0% 50%);
+        background: linear-gradient(to bottom, rgba(231, 224, 13, 0.2), #e7e00d); /* Degradado */
+
     }
 
     a{
@@ -232,6 +236,7 @@ span{
 
     .img img{
         width: 250px;
+
         margin-left: 260px;
         border-radius: 50%;
         overflow: hidden;
