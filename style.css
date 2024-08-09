@@ -155,8 +155,8 @@ span{
     }
 
     .img img{
-        width: 300px;
-        margin-left: 30px;
+        width: 250px;
+        margin-left: 50px;
         border-radius: 50%;
         overflow: hidden;
         object-fit: cover;
