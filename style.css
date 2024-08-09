@@ -139,7 +139,7 @@ span{
         padding: 10px 30px;
         display: inline-block;
         margin-top: 20px;
-        margin-left: 25px;
+        margin-left: 45px;
         border: 2px solid #e7e00d;
         transition: 05s;
     }
@@ -151,12 +151,12 @@ span{
     .img{
         position: absolute;
         right: auto;
-        top: 410px;
+        top: 425px;
     }
 
     .img img{
         width: 250px;
-        margin-left: 50px;
+        margin-left: 75px;
         border-radius: 50%;
         overflow: hidden;
         object-fit: cover;
