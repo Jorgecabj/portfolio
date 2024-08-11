@@ -112,8 +112,11 @@ span{
     }
 
     .clip-path {
-        clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 50% 54%, 0% 50%);
-        background: linear-gradient(to bottom, rgba(231, 224, 13, 0.2), #e7e00d); /* Degradado */
+        clip-path: polygon(100% 0, 100% 100%, 49% 100%, 65% 48%, 48% 0);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(231, 224, 13, 0.3); /* 0.3 es el nivel de transparencia */
     }
 
     .navbar ul {
@@ -167,7 +170,7 @@ span{
     .img{
         position: absolute;
         right: auto;
-        top: 425px;
+        top: 400px;
     }
 
     .img img{
