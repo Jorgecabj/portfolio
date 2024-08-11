@@ -112,7 +112,7 @@ span{
     }
 
     .clip-path {
-        clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 50% 52%, 0% 50%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 50% 51%, 0% 50%);
         background: linear-gradient(to bottom, rgba(231, 224, 13, 0.2), #e7e00d); /* Degradado */
     }
 
@@ -132,6 +132,12 @@ span{
         font-size: 12px;
     }
 
+    a:hover{
+        text-decoration: none;
+        color: #e7e00d;
+        font-size: 12px;
+    }
+
     .text{
         color: #fff;
         padding: auto;
@@ -142,7 +148,6 @@ span{
     }
     
     span{
-        color: #02d3fc;
         color: #e7e00d;
     }
 
@@ -205,6 +210,12 @@ span{
     a{
         text-decoration: none;
         color: #fff;
+        font-size: 20px;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: #e7e00d;
         font-size: 20px;
     }
 
