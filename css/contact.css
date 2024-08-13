@@ -1,0 +1,55 @@
+
+
+a:hover{
+    text-decoration: none;
+    color: #e7e00d;
+    font-size: 20px;
+}
+
+.polka-dots {
+    content: '';
+    position: fixed; /* Cambia a fixed para que abarque todo el viewport y no se mueva con el contenido */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Usa viewport width y height para cubrir todo el viewport */
+    height: 100vh;
+    background-image: radial-gradient(circle, #e7e00d 10%, transparent 11%), radial-gradient(circle, #e7e00d 20%, transparent 21%);
+    background-size: 40px 40px, 80px 80px; 
+    background-position: 0 0, 20px 20px; 
+    z-index: -2; 
+    opacity: 0.1; 
+}
+
+main{
+    display: flex;
+}
+
+section {
+    margin: 50px;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text-container{
+    background-color: #98bdee; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    padding: 50px;
+    overflow: auto; 
+    font-weight: bold;
+    text-align: center; 
+    border-radius: 25px;
+    margin-left: 2%;
+}
+
+.text-container p {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+
+
+
+
