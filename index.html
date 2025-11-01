@@ -1,39 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/Logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Ceballos | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="clip-path"></div>
-    <header>
-        <a href="" class="logo">Port<span>folio</span></a>
-        <div class="navbar">
-            <ul>
-                <li><a href="./templates/me.html">Sobre Mi</a></li>
-                <li><a href="./templates/proyects.html">Proyectos</a></li>
-                <li><a href="./templates/contact.html">Contacto</a></li>
-            </ul>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <a href="#inicio" class="logo" data-es="Jorge Ceballos" data-en="Jorge Ceballos">Jorge Ceballos</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About me">Sobre mí</a></li>
+        <li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+        <li><a href="#certificados" data-es="Certificados" data-en="Certificates">Certificados</a></li>
+        <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div id="language-toggle" class="lang-toggle">
+          <span class="lang-option active" data-lang="es">ES</span> | 
+          <span class="lang-option" data-lang="en">EN</span>
         </div>
-    </header>
-    <div class="text">
-        <h1>
-            Hola,<br />
-            Soy <span>Jorge Ceballos</span> <br />
-            Desarrollador<br />
-            <span>Front-end</span>
-        </h1>
-        <a href="https://drive.google.com/uc?export=download&id=1CBAgT5-5JlBPpnz-jKoY2aYTC7P-GrlL" class="btn">Descargar mi CV</a>
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+      </div>
+      
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1 data-es="Hola, soy <span>Jorge Ceballos</span>" data-en="Hi, I'm <span>Jorge Ceballos</span>">Hola, soy <span>Jorge Ceballos</span></h1>
+      <p data-es="Estudiante de Ingeniería en Informática y desarrollador Full Stack Python con especialización en Front-End. Me dedico a transformar datos complejos en historias visuales claras, creando soluciones intuitivas que apoyen los objetivos estratégicos de las organizaciones."
+         data-en="Computer Engineering student and Full Stack Python developer specialized in Front-End. I transform complex data into clear visual stories, creating intuitive solutions that support organizations’ strategic goals.">
+         Estudiante de Ingeniería en Informática y desarrollador Full Stack Python con especialización en Front-End. Me dedico a transformar datos complejos en historias visuales claras, creando soluciones intuitivas que apoyen los objetivos estratégicos de las organizaciones.
+      </p>
+      <a href="https://drive.google.com/file/d/1CBAgT5-5JlBPpnz-jKoY2aYTC7P-GrlL/view?usp=sharing" 
+         class="btn" target="_blank"
+         data-es="Descargar CV" data-en="Download CV">
+         Descargar CV
+      </a>
     </div>
-    <div class="img">
-        <img src="./img/me2.png" alt="foto">
+    <div class="hero-img">
+      <img src="img/me2.png" alt="Foto de Jorge Ceballos">
     </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" class="about">
+    <div class="container">
+      <h2 data-es="Sobre mí" data-en="About me">Sobre mí</h2>
+      <p data-es="Como estudiante de Ingeniería en Informática, me destaco por mi proactividad, adaptabilidad y entusiasmo por aprender. Soy desarrollador enfocado en crear páginas web modernas, funcionales y responsivas, siempre buscando mejorar mis habilidades y aportar valor en cada proyecto."
+         data-en="As a Computer Engineering student, I stand out for my proactivity, adaptability, and eagerness to learn. I’m a developer focused on creating modern, functional, and responsive websites, always striving to improve my skills and add value to every project I work on.">
+         Como estudiante de Ingeniería en Informática, me destaco por mi proactividad, adaptabilidad y entusiasmo por aprender. Soy desarrollador enfocado en crear páginas web modernas, funcionales y responsivas, siempre buscando mejorar mis habilidades y aportar valor en cada proyecto.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="projects">
+    <div class="container">
+      <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="img/mil_recetas_fondo.jpg" alt="Proyecto 1">
+          <h3 data-es="Proyecto 1" data-en="Project 1">Proyecto 1</h3>
+          <p data-es="Trabajo grupal del curso Codo a Codo. Página de recetas donde encontrarás miles de opciones, filtradas por categoría o tendencia. 100% responsive."
+             data-en="Group project from the Codo a Codo course. Recipe website with thousands of options, filtered by category or trend. Fully responsive.">
+             Trabajo grupal del curso Codo a Codo. Página de recetas donde encontrarás miles de opciones, filtradas por categoría o tendencia. 100% responsive.
+          </p>
+          <a href="https://jorgecabj.github.io/-Mil-Recetas-/" target="_blank" class="btn" data-es="Ver proyecto" data-en="View project">Ver proyecto</a>
+        </div>
+
+        <div class="project-card">
+          <img src="img/mela_nails_fondo.jpg" alt="Proyecto 2">
+          <h3 data-es="Proyecto 2" data-en="Project 2">Proyecto 2</h3>
+          <p data-es="Página dedicada al arte de las uñas, donde encontrarás imágenes y datos de contacto. 100% responsive."
+             data-en="Website dedicated to nail art, showcasing images and contact info. Fully responsive.">
+             Página dedicada al arte de las uñas, donde encontrarás imágenes y datos de contacto. 100% responsive.
+          </p>
+          <a href="https://jorgecabj.github.io/Mela-Nails/
+          " target="_blank" class="btn" data-es="Ver proyecto" data-en="View project">Ver proyecto</a>
+        </div>
+
+        <div class="project-card">
+          <img src="img/proximamente-transformed.jpeg" alt="Proyecto 3">
+          <h3 data-es="Proyecto 3" data-en="Project 3">Proyecto 3</h3>
+          <p data-es="Futuras páginas en proceso de creación." data-en="Future pages under development.">Futuras páginas en proceso de creación.</p>
+          <a href="#" class="btn" data-es="Ver proyecto" data-en="View project">Ver proyecto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICADOS -->
+  <section id="certificados" class="certificates">
+    <div class="container">
+      <h2 data-es="Certificados" data-en="Certificates">Certificados</h2>
+  
+      <div class="carousel">
+        <button class="carousel-btn prev">‹</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide">
+               <img src="img/IA.jpg" alt="Certificado 1">
+               <h3 data-es="Introducción a la IA" data-en="Introduction to AI">Introducción a la IA</h3>
+               <p data-es="Curso de Introducción a la IA - 2025" data-en="Introduction to AI Course - 2025">Curso de Introducción a la IA - 2025</p>
+            </li>
+            <li class="carousel-slide">
+              <img src="img/CAC.jpg" alt="Certificado 2">
+              <h3 data-es="FullStack Python" data-en="FullStack Python">FullStack Python</h3>
+              <p data-es="Curso de Full Stack Python - 2024" data-en="Full Stack Python Course - 2024">Curso de Full Stack Python - 2024</p>
+            </li>
+            <li class="carousel-slide">
+              <img src="img/PB.jpg" alt="Certificado 3">
+              <h3 data-es="Power BI" data-en="Power BI">Power BI</h3>
+              <p data-es="Curso de Power BI - 2024" data-en="Power BI Course - 2024">Curso de Power BI - 2024</p>
+            </li>
+            <li class="carousel-slide">
+              <img src="img/OI.jpg" alt="Certificado 4">
+              <h3 data-es="Office Intermedio" data-en="Intermediate Office">Office Intermedio</h3>
+              <p data-es="Curso de Office Intermedio - 2023" data-en="Intermediate Office Course - 2023">Curso de Office Intermedio - 2023</p>
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <div class="container">
+      <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+      <p data-es="¿Querés trabajar conmigo o saber más sobre mis proyectos?"
+         data-en="Would you like to work with me or learn more about my projects?">
+         ¿Querés trabajar conmigo o saber más sobre mis proyectos?
+      </p>
+      <a href="https://www.linkedin.com/in/ceballosjorge99" target="_blank" class="btn"
+         data-es="Linkedin" data-en="LinkedIn">Linkedin</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-es="© 2025 Jorge Ceballos | Todos los derechos reservados"
+       data-en="© 2025 Jorge Ceballos | All rights reserved">
+       © 2025 Jorge Ceballos | Todos los derechos reservados
+    </p>
+  </footer>
+
+<!-- SCRIPT -->
+<script>
+  // --- Toggle menú responsive ---
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // --- Cambio de idioma ---
+  const langToggle = document.getElementById('language-toggle');
+  const langOptions = document.querySelectorAll('.lang-option');
+  const translateElements = document.querySelectorAll('[data-es]');
+  let currentLang = 'es';
+
+  langOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      currentLang = option.dataset.lang;
+      translateElements.forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${currentLang}`);
+      });
+      langOptions.forEach(o => o.classList.remove('active'));
+      option.classList.add('active');
+    });
+  });
+
+  // --- Modo oscuro ---
+  const themeBtn = document.getElementById('theme-toggle');
+  themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    themeBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  });
+
+  // --- Carrusel de certificados ---
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector('.carousel-btn.next');
+  const prevButton = document.querySelector('.carousel-btn.prev');
+
+  let currentIndex = 0;
+  let slidesToShow = 3;
+
+  function updateSlidesToShow() {
+    const width = window.innerWidth;
+    if (width < 768) slidesToShow = 1;
+    else if (width < 1024) slidesToShow = 2;
+    else slidesToShow = 3;
+  }
+
+  function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width + 20;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  nextButton.addEventListener('click', () => {
+    updateSlidesToShow();
+    if (currentIndex < slides.length - slidesToShow) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    updateSlidesToShow();
+    updateCarousel();
+  });
+
+  updateSlidesToShow();
+  updateCarousel();
+</script>
 
 </body>
-
 </html>
