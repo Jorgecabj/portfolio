@@ -161,12 +161,6 @@
 
 <!-- SCRIPT -->
 <script>
-  // --- Toggle menú responsive ---
-  const toggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
 
   // --- Cambio de idioma ---
   const langToggle = document.getElementById('language-toggle');
@@ -235,6 +229,48 @@
 
   updateSlidesToShow();
   updateCarousel();
+
+  // Asegurate de ejecutar este script después de que el DOM haya cargado
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('menu-toggle') || document.querySelector('.menu-toggle');
+  const navLinks = document.getElementById('nav-links') || document.querySelector('.nav-links');
+
+  if (!toggle || !navLinks) return; // si por alguna razón no existen, salimos
+
+  // Abrir / cerrar al tocar el botón
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // no dejar que el click burbujee
+    navLinks.classList.toggle('active');
+  });
+
+  // Cerrar al tocar un link del menú
+  navLinks.addEventListener('click', (e) => {
+    // si clickeó en un <a>, cerramos
+    if (e.target.tagName.toLowerCase() === 'a') {
+      navLinks.classList.remove('active');
+    }
+  });
+
+  // Cerrar al tocar fuera del menú (para UX)
+  document.addEventListener('click', (e) => {
+    // Si el menú está abierto y el click fue fuera del menú y fuera del botón, cerramos
+    if (navLinks.classList.contains('active')) {
+      const isClickInsideMenu = navLinks.contains(e.target);
+      const isClickOnToggle = toggle.contains(e.target);
+      if (!isClickInsideMenu && !isClickOnToggle) {
+        navLinks.classList.remove('active');
+      }
+    }
+  });
+
+  // Cerrar al redimensionar la ventana a >768 (para evitar menú abierto en desktop)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+});
+
 </script>
 
 </body>

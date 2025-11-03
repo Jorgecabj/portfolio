@@ -379,36 +379,91 @@ footer {
     }
 }
 
+/* =========================
+   MENÚ MÓVIL - REEMPLAZAR
+   ========================= */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--card-bg);
-        width: 200px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
+  /* Mostrar el icono del menú */
+  .menu-toggle {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.18);
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    font-size: 1.6rem;
+    color: var(--blue);
+    z-index: 30; /* por encima del menú */
+  }
 
-    .nav-links.active {
-        display: flex;
-    }
+  .menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+    transform: scale(1.03);
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  /* Ocultamos el menú por defecto en móvil (uso del id/class real) */
+  /* Usamos selector con id para ser específico si tu ul tiene id="nav-links" */
+  .nav-links,
+  #nav-links {
+    display: none !important;
+  }
 
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
+  /* Menú cuando está activo (clase .active añadida por JS) */
+  .nav-links.active,
+  #nav-links.active {
+    display: flex !important;
+    position: absolute;
+    top: 64px; /* separa del header */
+    right: 16px;
+    width: 220px;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    backdrop-filter: blur(6px);
+    z-index: 25;
+    animation: menuDrop 0.28s ease;
+    text-align: left;
+  }
 
-    .hero-img img {
-        margin-top: 30px;
-    }
+  /* Alineación del header para que el botón no quede pegado al borde */
+  .navbar {
+    padding: 12px 18px;
+  }
 
-    .carousel-slide {
-        min-width: 100%; /* 1 visible */
-    }
+  /* Estilo de los items */
+  .nav-links li {
+    list-style: none;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: background 0.22s ease, color 0.22s ease;
+  }
+
+  .nav-links li a:hover {
+    background: rgba(26,115,232,0.08); /* ligero tono azul */
+    color: var(--blue);
+  }
+
+  /* Opcional: ajuste para el toggle de idioma y tema dentro del menú si se muestran ahí */
+  .nav-actions {
+    gap: 8px;
+  }
+
+  @keyframes menuDrop {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 }
+
+
