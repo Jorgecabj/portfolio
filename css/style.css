@@ -379,9 +379,6 @@ footer {
     }
 }
 
-/* =========================
-   MENÚ MÓVIL - REEMPLAZAR
-   ========================= */
 @media (max-width: 768px) {
   /* Mostrar el icono del menú */
   .menu-toggle {
@@ -394,6 +391,10 @@ footer {
     font-size: 1.6rem;
     color: var(--blue);
     z-index: 30; /* por encima del menú */
+  }
+
+  .hero-img {
+    margin-top: 30px; /* separa la imagen del botón */
   }
 
   .menu-toggle:hover {
