@@ -103,40 +103,47 @@
   </section>
 
   <!-- CERTIFICADOS -->
-  <section id="certificados" class="certificates">
-    <div class="container">
-      <h2 data-es="Certificados" data-en="Certificates">Certificados</h2>
-  
-      <div class="carousel">
-        <button class="carousel-btn prev">‹</button>
-        <div class="carousel-track-container">
-          <ul class="carousel-track">
-            <li class="carousel-slide">
-               <img src="img/IA.jpg" alt="Certificado 1">
-               <h3 data-es="Introducción a la IA" data-en="Introduction to AI">Introducción a la IA</h3>
-               <p data-es="Curso de Introducción a la IA - 2025" data-en="Introduction to AI Course - 2025">Curso de Introducción a la IA - 2025</p>
-            </li>
-            <li class="carousel-slide">
-              <img src="img/CAC.jpg" alt="Certificado 2">
-              <h3 data-es="FullStack Python" data-en="FullStack Python">FullStack Python</h3>
-              <p data-es="Curso de Full Stack Python - 2024" data-en="Full Stack Python Course - 2024">Curso de Full Stack Python - 2024</p>
-            </li>
-            <li class="carousel-slide">
-              <img src="img/PB.jpg" alt="Certificado 3">
-              <h3 data-es="Power BI" data-en="Power BI">Power BI</h3>
-              <p data-es="Curso de Power BI - 2024" data-en="Power BI Course - 2024">Curso de Power BI - 2024</p>
-            </li>
-            <li class="carousel-slide">
-              <img src="img/OI.jpg" alt="Certificado 4">
-              <h3 data-es="Office Intermedio" data-en="Intermediate Office">Office Intermedio</h3>
-              <p data-es="Curso de Office Intermedio - 2023" data-en="Intermediate Office Course - 2023">Curso de Office Intermedio - 2023</p>
-            </li>
-          </ul>
-        </div>
-        <button class="carousel-btn next">›</button>
+  <!-- CERTIFICADOS -->
+<section id="certificados" class="certificates">
+  <div class="container">
+    <h2 data-es="Certificados" data-en="Certificates">Certificados</h2>
+
+    <div class="carousel">
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <li class="carousel-slide">
+            <img src="img/IA.jpg" alt="Certificado 1">
+            <h3 data-es="Introducción a la IA" data-en="Introduction to AI">Introducción a la IA</h3>
+            <p data-es="Curso de Introducción a la IA - 2025" data-en="Introduction to AI Course - 2025">Curso de Introducción a la IA - 2025</p>
+          </li>
+          <li class="carousel-slide">
+            <img src="img/CAC.jpg" alt="Certificado 2">
+            <h3 data-es="FullStack Python" data-en="FullStack Python">FullStack Python</h3>
+            <p data-es="Curso de Full Stack Python - 2024" data-en="Full Stack Python Course - 2024">Curso de Full Stack Python - 2024</p>
+          </li>
+          <li class="carousel-slide">
+            <img src="img/PB.jpg" alt="Certificado 3">
+            <h3 data-es="Power BI" data-en="Power BI">Power BI</h3>
+            <p data-es="Curso de Power BI - 2024" data-en="Power BI Course - 2024">Curso de Power BI - 2024</p>
+          </li>
+          <li class="carousel-slide">
+            <img src="img/OI.jpg" alt="Certificado 4">
+            <h3 data-es="Office Intermedio" data-en="Intermediate Office">Office Intermedio</h3>
+            <p data-es="Curso de Office Intermedio - 2023" data-en="Intermediate Office Course - 2023">Curso de Office Intermedio - 2023</p>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+
+    <!-- Botones debajo del carrusel -->
+    <div class="carousel-controls">
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- CONTACTO -->
   <section id="contacto" class="contact">
@@ -207,20 +214,27 @@
     track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
   }
 
-  nextButton.addEventListener('click', () => {
-    updateSlidesToShow();
-    if (currentIndex < slides.length - slidesToShow) {
-      currentIndex++;
-      updateCarousel();
-    }
-  });
+nextButton.addEventListener('click', () => {
+  updateSlidesToShow();
+  if (currentIndex < slides.length - slidesToShow) {
+    currentIndex++;
+  } else {
+    // Si llega al final, vuelve al principio
+    currentIndex = 0;
+  }
+  updateCarousel();
+});
 
-  prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
-    }
-  });
+prevButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    // Si está en el principio, salta al último grupo visible
+    currentIndex = slides.length - slidesToShow;
+  }
+  updateCarousel();
+});
+
 
   window.addEventListener('resize', () => {
     updateSlidesToShow();

@@ -276,33 +276,42 @@ h2 {
 }
 
 /* Botones */
+/* --- BOTONES DEBAJO DEL CARRUSEL --- */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static; /* ya no flotan dentro del carrusel */
     background: var(--blue);
     border: none;
     color: #fff;
-    font-size: 2rem;
-    padding: 5px 15px;
+    font-size: 1.5rem;
+    padding: 8px 18px;
     cursor: pointer;
     border-radius: 10px;
-    z-index: 5;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .carousel-btn:hover {
     background: var(--yellow);
     color: var(--blue-dark);
+    transform: translateY(-2px);
 }
 
-/* Posiciones botones */
-.carousel-btn.prev {
-    left: 10px;
+/* Modo oscuro */
+body.dark-mode .carousel-btn {
+    background: var(--yellow);
+    color: var(--blue-dark);
 }
-
-.carousel-btn.next {
-    right: 10px;
+body.dark-mode .carousel-btn:hover {
+    background: var(--blue);
+    color: var(--light-bg);
 }
 
 /* Modo oscuro Proyectos y Certificados */
@@ -402,6 +411,10 @@ footer {
     transform: scale(1.03);
   }
 
+  .nav-links a:hover{
+    color: #000;
+  }
+
   /* Ocultamos el menú por defecto en móvil (uso del id/class real) */
   /* Usamos selector con id para ser específico si tu ul tiene id="nav-links" */
   .nav-links,
@@ -420,12 +433,12 @@ footer {
     flex-direction: column;
     gap: 6px;
     padding: 14px;
-    background: rgba(255, 255, 255, 0.96);
+    background: #64a1ff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.18);
     backdrop-filter: blur(6px);
     z-index: 25;
-    animation: menuDrop 0.28s ease;
+
     text-align: left;
   }
 
@@ -452,14 +465,23 @@ footer {
   }
 
   .nav-links li a:hover {
-    background: rgba(26,115,232,0.08); /* ligero tono azul */
-    color: var(--blue);
+    background: rgba(21, 87, 173, 0.08); /* ligero tono azul */
   }
 
   /* Opcional: ajuste para el toggle de idioma y tema dentro del menú si se muestran ahí */
   .nav-actions {
     gap: 8px;
   }
+
+    /* Mismo fondo en modo oscuro */
+  body.dark-mode .nav-links {
+    background: #a8c8ff; /* Igual azul claro */
+  }
+
+  body.dark-mode .nav-links a {
+    color: #000; /* Letras negras también en oscuro */
+  }
+
 
   @keyframes menuDrop {
     from { opacity: 0; transform: translateY(-8px); }
