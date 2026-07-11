@@ -103,7 +103,7 @@
   </section>
 
   <!-- CERTIFICADOS -->
-  <!-- CERTIFICADOS -->
+<!-- CERTIFICADOS -->
 <section id="certificados" class="certificates">
   <div class="container">
     <h2 data-es="Certificados" data-en="Certificates">Certificados</h2>
@@ -111,31 +111,63 @@
     <div class="carousel">
       <div class="carousel-track-container">
         <ul class="carousel-track">
+
           <li class="carousel-slide">
-            <img src="img/IA.jpg" alt="Certificado 1">
-            <h3 data-es="Introducción a la IA" data-en="Introduction to AI">Introducción a la IA</h3>
-            <p data-es="Curso de Introducción a la IA - 2025" data-en="Introduction to AI Course - 2025">Curso de Introducción a la IA - 2025</p>
+            <a href="img/IA.jpg" class="certificate-link">
+              <img src="img/IA.jpg" alt="Certificado 1">
+            </a>
+            <h3 data-es="Introducción a la IA" data-en="Introduction to AI">
+              Introducción a la IA
+            </h3>
+            <p data-es="Curso de Introducción a la IA - 2025"
+               data-en="Introduction to AI Course - 2025">
+              Curso de Introducción a la IA - 2025
+            </p>
           </li>
+
           <li class="carousel-slide">
-            <img src="img/CAC.jpg" alt="Certificado 2">
-            <h3 data-es="FullStack Python" data-en="FullStack Python">FullStack Python</h3>
-            <p data-es="Curso de Full Stack Python - 2024" data-en="Full Stack Python Course - 2024">Curso de Full Stack Python - 2024</p>
+            <a href="img/CAC.jpg" class="certificate-link">
+              <img src="img/CAC.jpg" alt="Certificado 2">
+            </a>
+            <h3 data-es="FullStack Python" data-en="FullStack Python">
+              FullStack Python
+            </h3>
+            <p data-es="Curso de Full Stack Python - 2024"
+               data-en="Full Stack Python Course - 2024">
+              Curso de Full Stack Python - 2024
+            </p>
           </li>
+
           <li class="carousel-slide">
-            <img src="img/PB.jpg" alt="Certificado 3">
-            <h3 data-es="Power BI" data-en="Power BI">Power BI</h3>
-            <p data-es="Curso de Power BI - 2024" data-en="Power BI Course - 2024">Curso de Power BI - 2024</p>
+            <a href="img/PB.jpg" class="certificate-link">
+              <img src="img/PB.jpg" alt="Certificado 3">
+            </a>
+            <h3 data-es="Power BI" data-en="Power BI">
+              Power BI
+            </h3>
+            <p data-es="Curso de Power BI - 2024"
+               data-en="Power BI Course - 2024">
+              Curso de Power BI - 2024
+            </p>
           </li>
+
           <li class="carousel-slide">
-            <img src="img/OI.jpg" alt="Certificado 4">
-            <h3 data-es="Office Intermedio" data-en="Intermediate Office">Office Intermedio</h3>
-            <p data-es="Curso de Office Intermedio - 2023" data-en="Intermediate Office Course - 2023">Curso de Office Intermedio - 2023</p>
+            <a href="img/OI.jpg" class="certificate-link">
+              <img src="img/OI.jpg" alt="Certificado 4">
+            </a>
+            <h3 data-es="Office Intermedio" data-en="Intermediate Office">
+              Office Intermedio
+            </h3>
+            <p data-es="Curso de Office Intermedio - 2023"
+               data-en="Intermediate Office Course - 2023">
+              Curso de Office Intermedio - 2023
+            </p>
           </li>
+
         </ul>
       </div>
     </div>
 
-    <!-- Botones debajo del carrusel -->
     <div class="carousel-controls">
       <button class="carousel-btn prev">‹</button>
       <button class="carousel-btn next">›</button>
@@ -143,7 +175,6 @@
 
   </div>
 </section>
-
 
   <!-- CONTACTO -->
   <section id="contacto" class="contact">
@@ -160,9 +191,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <p data-es="© 2025 Jorge Ceballos | Todos los derechos reservados"
-       data-en="© 2025 Jorge Ceballos | All rights reserved">
-       © 2025 Jorge Ceballos | Todos los derechos reservados
+    <p data-es="© 2026 Jorge Ceballos | Todos los derechos reservado"
+       data-en="© 2026 Jorge Ceballos | All rights reserved">
+       © 2026 Jorge Ceballos | Todos los derechos reservados
     </p>
   </footer>
 
@@ -283,6 +314,64 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.remove('active');
     }
   });
+});
+
+//==============================
+// LIGHTBOX CERTIFICADOS
+//==============================
+
+const certificateLinks=document.querySelectorAll(".certificate-link");
+
+const lightbox=document.getElementById("lightbox");
+
+const lightboxImg=document.getElementById("lightbox-img");
+
+const closeLightbox=document.querySelector(".close-lightbox");
+
+certificateLinks.forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+lightboxImg.src=this.href;
+
+lightbox.classList.add("active");
+
+document.body.style.overflow="hidden";
+
+});
+
+});
+
+function cerrarLightbox(){
+
+lightbox.classList.remove("active");
+
+document.body.style.overflow="auto";
+
+}
+
+closeLightbox.onclick=cerrarLightbox;
+
+lightbox.onclick=function(e){
+
+if(e.target===lightbox){
+
+cerrarLightbox();
+
+}
+
+}
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+cerrarLightbox();
+
+}
+
 });
 
 </script>
